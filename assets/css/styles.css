@@ -72,6 +72,7 @@ header {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  text-decoration: none;
 }
 .brand-name {
   font-family: 'Fraunces', serif;
