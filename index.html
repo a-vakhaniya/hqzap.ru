@@ -177,7 +177,7 @@
           <h3>Нужен прайс-лист?</h3>
           <p>Оставьте заявку — пришлём актуальный прайс-лист на все позиции в наличии.</p>
         </div>
-        <a class="price-cta" href="#contact">Запросить прайс-лист</a>
+        <a class="price-cta" href="#contact" data-price-request>Запросить прайс-лист</a>
       </div>
     </div>
   </section>
@@ -199,30 +199,39 @@
             <div>г. Москва, Сходненская 11</div>
           </div>
         </div>
-        <form>
+        <form id="lead-form" novalidate>
           <div class="form-row">
             <div>
               <label for="f-name">Ваше имя</label>
-              <input id="f-name" type="text" placeholder="Иван Иванов" required>
+              <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Иван Иванов" required>
             </div>
             <div>
               <label for="f-phone">Телефон</label>
-              <input id="f-phone" type="tel" placeholder="+7 900 000-00-00" required>
+              <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="+7 900 000-00-00" required>
             </div>
           </div>
           <div>
             <label for="f-mail">Почта</label>
-            <input id="f-mail" type="email" placeholder="mail@example.com" required>
+            <input id="f-mail" name="email" type="email" autocomplete="email" placeholder="mail@example.com" required>
           </div>
           <div>
             <label for="f-question">Ваш вопрос</label>
-            <textarea id="f-question" placeholder="Опишите, какая запчасть нужна" required></textarea>
+            <textarea id="f-question" name="question" placeholder="Опишите, какая запчасть нужна" required></textarea>
           </div>
           <label class="checkbox-row">
-            <input type="checkbox" required>
+            <input id="f-price" name="price_list" type="checkbox">
+            <span>Хочу получить прайс-лист</span>
+          </label>
+          <label class="checkbox-row">
+            <input name="consent" type="checkbox" required>
             <span>Согласен(на) на обработку персональных данных в соответствии с <a href="privacy.html" class="link-underline">политикой конфиденциальности</a></span>
           </label>
+          <div class="hp-field" aria-hidden="true">
+            <label for="f-website">Не заполняйте это поле</label>
+            <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
           <button class="submit-btn" type="submit">Отправить заявку</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </div>
